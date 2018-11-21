@@ -17,7 +17,8 @@ then
 fi
 
 # Change ownership of the artifacts directory
-chown -R build /artifacts
+chgrp -R build /artifacts
+chmod g+w /artifacts
 
 # Execute the build (as user 'build')
 gosu build /sources/build.sh
