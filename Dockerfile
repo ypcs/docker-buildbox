@@ -1,7 +1,6 @@
-FROM ypcs/ubuntu:bionic
+FROM ypcs/debian:stretch
 
 RUN sed 's/^deb /deb-src /g' /etc/apt/sources.list |tee -a /etc/apt/sources.list && \
-    sed -i 's/main$/main universe/g' /etc/apt/sources.list && \
     /usr/lib/docker-helpers/apt-setup && \
     /usr/lib/docker-helpers/apt-upgrade && \
     apt-get --assume-yes install \
