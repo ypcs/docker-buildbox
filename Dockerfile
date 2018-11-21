@@ -1,4 +1,4 @@
-FROM ypcs/debian:stretch
+FROM ypcs/debian:buster
 
 RUN sed 's/^deb /deb-src /g' /etc/apt/sources.list |tee -a /etc/apt/sources.list && \
     /usr/lib/docker-helpers/apt-setup && \
